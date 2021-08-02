@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MNNIT'24 J1</title>
+    <!-- import jquery custom css from cdn -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- import logo and icon font awsome from cdn-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<style>
+.class{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    margin-right: 18px;
+    width: 280px;
+    height: 160px;
+    background-color: rgba(0, 0, 0, 0.945);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+.class .header{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    background-image: linear-gradient(
+180deg
+, black, rgb(14 14 14 / 95%));
+}
+.class .header .header1{
+    display: flex;
+    justify-content: space-around;
+}
+.class .body{
+    display: flex;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    border-radius: 25rem;
+    background-color: #c8e3f0;
+    text-align: center;
+}
+.name{
+    display: flex;
+    justify-content: center;
+    color: rgba(0, 131, 70, 0.692);
+    font-size: 24px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.footer{
+    display: flex;
+    justify-content: center;
+}
+.footer .video{
+    display: relative;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    background-color: rgb(44, 44, 44);
+}
+.footer .audio{
+    display: relative;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    background-color: rgb(44, 44, 44);
+}
+.footer .end{
+    display: relative;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    background-color: rgb(150, 56, 56);
+}
+#minimize{
+    cursor: pointer;
+}
+.form{
+    position: fixed;
+    display: flex;
+    width: 400px;
+    z-index: -1;
+    border: 5px solid black;
+    border-radius: 10px;
+    padding: 40px;
+    margin: 20px;
+    color: rgb(70, 70, 70);
+    background-color: rgba(218, 218, 218, 0.945);
+   
+}
+.form #start{
+    width: 120px;
+    height: 30px;
+}
+.form #endclass123{
+    width: 120px;
+    height: 30px;
+    display: none;
+}
+</style>
+<div class="container">
+
+
+    <div class="class">
+        <div class="header">
+            <div class="header-1">
+            <i class="fa fa-circle" style="font-size:15px;color:rgb(230, 0, 0); border: 1px solid white; border-radius: 25rem;padding:0px; "></i>
+            <span class="className" style="margin: 0px 8px; max-width: 200px;">Physics (Lab.)/J1</span>
+            <span class="timer" style="font-size:12px">00</span><span style="font-size:12px">:<span id="sec">00</span></span>
+        </div>
+        <!-- minimize icon from font awsome icon-->
+        <i class="fa fa-minus" id="minimize" style="font-size:8px;color:rgb(255, 255, 255); padding:0px 15px;"></i>
+
+        </div>
+        <div class="body">
+            <div class="name">
+            <span class="name-1">P</span>
+            <span class="name-2">P</span></div>
+        </div>
+        <din class="footer">
+           <div class="video"> 
+               <i class="fa fa-video-camera" style="font-size:20px;color:rgb(158, 158, 158);padding:0px; "></i>
+           </div>
+           <div class="audio" style="cursor: pointer;"> 
+            <i class="fa fa-microphone" style="font-size:20px;color:rgb(158, 158, 158);padding:0px; "></i>
+        </div>
+        <div class="end" id="minimize"> 
+            <i class="material-icons" style="font-size:20px;color:rgb(255, 255, 255);padding:0px; " >call_end</i>
+        </div>
+        </din>
+        
+    </div>
+
+
+    <div class="form">
+        <form>
+            <input type="text" id="class-name" placeholder="Class name" required>
+            <br>
+            <input type="text" id="prof-name-1" placeholder="Professor's first name" required>
+            <input type="text" id="prof-name-2" placeholder="Professor's last name" required>
+            <br>
+            <input type="checkbox" id="mic"> Microphone
+            <br>
+            <input type="checkbox" id="vid" checked> Video
+            <!-- slider input   -->
+            <br>
+            Class duration: 
+            <input type="range" id="slider" min="0" max="60" value="0" step="1"> <span class="timer">0</span>:<span id="sec1">00</span>
+            <br>
+
+        </form>
+        <button id="start"> Start Class </button>
+        <button id="endclass123"> End Class </button>
+    </div>
+
+</div>
+
+
+<!-- <div class="ad" style="position: fixed; display: flex; width: 800px; height: 150px;">
+kuchh bhi
+</div> -->
+
+
+<!-- audio html endcall.mp3 from same folder -->
+<audio id="audio" src="endcall.mp3"></audio>
+
+<!-- import jquery from google cdn -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- import jquery ui from vdn -->
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<script>
+    $(".form").draggable();
+    $(".ad").draggable();
+    $(".class").fadeOut(10);
+    $(".class").draggable();
+    $("#minimize").click(function(){
+    endclass();
+    })
+    $(".end").click(function(){
+    endclass();
+    })
+    $("#endclass123").click(function(){
+     endclass();
+    })
+    $("#start").click(function(){
+        startclass();
+    });
+    $(".audio").click(function (){
+        $("#mic").click();
+    });
+    
+    // when id mic is checked
+    $("#mic").change(function(){
+        if($("#mic").is(":checked")){
+
+            $(".audio").find(".fa-microphone").removeClass("fa-microphone").addClass("fa-microphone-slash");
+        }
+        else{
+            $(".audio").find(".fa-microphone-slash").removeClass("fa-microphone-slash").addClass("fa-microphone");
+        }
+    })
+    $("#class-name").keyup(function(){
+        $(".class").find(".className").text($("#class-name").val());
+    });
+
+    // when range id slider value is changed
+    $("#slider").change(function(){
+        $(".timer").html($("#slider").val());
+    });
+
+    $("#prof-name-1").keyup(function(){
+        // get 2st char of this
+        var firstChar = $("#prof-name-1").val().charAt(0);
+        // make firstchar uppercase
+        firstChar = firstChar.toUpperCase();
+        $(".name-1").html(firstChar);
+    });
+    $("#prof-name-2").keyup(function(){
+        // get 2st char of this
+        var firstChar = $("#prof-name-2").val().charAt(0);
+        firstChar = firstChar.toUpperCase();
+        $(".name-2").html(firstChar);
+    });
+
+    $("#vid").change(function(){
+        if($("#vid").is(":checked")){
+
+        }
+        else{
+            alert('Video on rahega guys');
+            $("#vid").prop('checked', true);
+        }
+    });
+    count = 1;
+    setInterval(function(){
+     if(count%2 == 0) time = 2500;
+     else time = 1000;
+           
+            document.querySelector("body > div > div.class.ui-draggable.ui-draggable-handle > div.body").style.boxShadow = "-5px -2px 100px 10px #888888";
+       
+        setTimeout(function(){
+           
+            document.querySelector("body > div > div.class.ui-draggable.ui-draggable-handle > div.body").style.boxShadow = "";
+        }, time);
+        count++;
+    }, 3000);
+function startclass(){
+    $(".class").fadeIn(500);
+    $("#endclass123").css("display", "block");
+    $("#start").css("display", "none");
+
+    intervaltoken = setInterval(function(){
+        var val = $("#sec").html();
+        
+        val++;
+        if(val.length == 1){
+            val = "0" + val;
+        }
+        if(val > 60){
+            val2 = $("#slider").val();
+            val2++;
+            $("#slider").val(val2);
+
+            val = "00";
+        }
+        $("#sec").html(val);
+        $("#sec1").html(val);
+    }, 1000);
+ 
+}
+
+function endclass(){
+    clearInterval(intervaltoken);
+    $(".class").fadeOut(1000);
+     $("#audio")[0].play();
+     $("#endclass123").css("display", "none");
+     $("#start").css("display", "block");
+}
+</script>
+</body>
+</html>
