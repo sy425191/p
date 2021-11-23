@@ -1,0 +1,155 @@
+body{
+    position: relative;
+    background-color: teal;
+
+}
+#top{
+    background-color: rgb(182, 179, 179);
+    color: rgb(138 8 20);
+}
+.header{
+    background-color: bisque;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 10px;
+    display: none;
+}
+.header h1{
+    font-size: xx-large;
+}
+.header p{
+    font-size: large;
+}
+.navbar{
+    background-color: rgb(63, 63, 62);
+    padding: 20px;
+    border: 2px solid red;
+    overflow: hidden;
+
+}
+.navbar a{
+    position: relative;
+    display: inline;
+    color: white;
+    font-size: medium;
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden;
+
+   
+}
+#displayheader{
+    position: relative;
+    display: none;
+    color: white;
+    cursor: pointer;
+    left: 60%;
+    font-size: xx-large;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+@media screen and (max-width: 600px) {
+    #displayheader {
+      display: inline;
+    }
+    a[href="#contact"]{
+        display: none;
+    }
+    a[href="#education"]{
+        display: none;
+    }
+    a[href="#skill"]{
+        display: none;
+    }
+  }
+.boxleft{
+    width: 80%;
+    margin: 10%;
+    text-align: center;
+    border: 1px solid black;
+    opacity: 0.6;
+    
+}
+.boxanimate{
+    display: none;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 2px solid black;
+    color: rgb(70 68 68);
+}
+.boxanimate ul li{
+    font-size: 20px;
+}
+.boxanimate p{
+    margin-left: 10px;
+}
+button[id=scrolldown],[id=contact]{
+    text-align: center;
+    background-color: grey;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: large;
+    cursor: pointer;
+}
+button[id=contact]{
+    display: none;
+}
+.contact{
+    display: none; 
+    background-color: teal;
+   
+    
+}
+.contact form{
+    margin-left: 14%;
+    margin-right: 14%;
+    border: 2px solid black;
+}
+.contact form input{
+    width: 200px;
+    background-color: burlywood;
+    color: black;
+    font-size: larger;
+
+}
+.contact form input[type=submit]{
+    background-color: rgb(12, 12, 12);
+    color: white;
+    cursor: pointer;
+}
+.contact form textarea{
+    background-color: burlywood;
+    width: 60%;
+} 
+
+.projectarea{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.project{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px 0px;
+    border: 2px solid rgba(56, 56, 56, 0.788);
+}
+.project img{
+    width: 250px;
+    height: 150px;
+}
+
+.project h3{
+    color: rgb(97, 102, 47);
+    font-family: 'Courier New', Courier, monospace;
+}
+.project a{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
